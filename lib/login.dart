@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import '../text_form.dart';
+
+// import '../text_form.dart';
 
 class Login extends StatelessWidget {
-  Login({Key? key}) : super(key: key);
-
-  bool isPasswordShown = true;
+  const Login({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,17 +29,21 @@ class Login extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 16),
-            const TextForm(
-              hintText: 'Email',
-              isObsecureText: false,
+            const TextField(
+              decoration: InputDecoration(
+                hintText: 'Name',
+              ),
+              cursorColor: Color(0xff5DB075),
             ),
-            TextForm(
+            const SizedBox(height: 16),
+            const TextField(
+              decoration: InputDecoration(
                 hintText: 'Password',
-                isPasswordField: true,
-                isObsecureText: isPasswordShown,
-                showPassord: () {
-                  isPasswordShown = !isPasswordShown;
-                }),
+              ),
+              obscureText: true,
+              cursorColor: Color(0xff5DB075),
+            ),
+            const SizedBox(height: 16),
             const Spacer(),
             SizedBox(
               width: double.infinity,
